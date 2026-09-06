@@ -1,5 +1,12 @@
 # Azure AD - Attack and Defense Playbook
 
+> **📌 Note on Currency (2026)**
+>
+> This playbook explicitly pins itself to **MITRE ATT&CK v11** and uses **"Azure AD"** terminology throughout. Microsoft rebranded Azure AD to **Microsoft Entra ID** in 2023. When using this content today:
+> - Mentally substitute "Entra ID" for "Azure AD" wherever it appears.
+> - Re-map the referenced techniques against the current ATT&CK release before running a live exercise — see [MITRE ATT&CK Updates](https://attack.mitre.org/resources/updates/).
+> - This may be a point-in-time fork — check the [upstream repository (Cloud-Architekt/AzureAD-Attack-Defense)](https://github.com/Cloud-Architekt/AzureAD-Attack-Defense) for newer content and updates before relying on this copy.
+
 This publication is a collection of various common attack scenarios on Azure Active Directory and how they can be mitigated or detected.
 All of the included scenarios, insights and comments are based on experiences from the contributors during their attack simulations, hands-on or real-world scenarios.
 
@@ -12,6 +19,7 @@ We invite identity or security experts from the community to work together on th
 - [Service Principals in Azure DevOps Pipelines](ServicePrincipals-ADO.md)
 - [Azure AD Connect Sync Service Account ](AADCSyncServiceAccount.md)
 - [Replay of Primary Refresh (PRT) and other issued tokens](ReplayOfPrimaryRefreshToken.md)
+- [Token Theft & Conditional Access Bypass (Post-2023 Techniques)](TokenTheftAndCABypassPost2023.md) _(community addendum, 2026)_
 
 ##### Appendix:
 - [Overview of Identity Security Monitoring in Microsoft Cloud](IdentitySecurityMonitoring.md)
@@ -155,6 +163,13 @@ Microsoft has introduced Windows 11 with the requirement to use a Trusted Platfo
 ![Untitled](./media/replay-prt/PrtReplay.png)
 
 - [Replay of Primary Refresh (PRT) and other issued tokens](ReplayOfPrimaryRefreshToken.md)
+
+## Token Theft & Conditional Access Bypass (Post-2023 Techniques)
+*This is a short community addendum (2026) rather than an original playbook chapter. It covers three token-abuse techniques that gained prominence after the original chapters were written: Family of Client IDs (FOCI) refresh token abuse, device-code-flow phishing, and the evolution of PRT abuse beyond what is already documented in Chapter 5.*
+
+It follows the same structure as the other chapters (attack scenario, detection approach, illustrative KQL sketch) but is intentionally brief and cross-references the existing PRT chapter rather than duplicating it.
+
+- [Token Theft & Conditional Access Bypass (Post-2023 Techniques)](TokenTheftAndCABypassPost2023.md)
 
 ## How to become part of the project and contribute?
 - **Update or new content (Pull Request):** As already mentioned, we like to have a living document which is driven by the Azure AD community! Share your results and insights as part of this project! Send a pull request to add your content to this project.
